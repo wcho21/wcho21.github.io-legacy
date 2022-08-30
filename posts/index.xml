@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dev Blog</title>
-    <link>https://wcho21.github.io/</link>
-    <description>Recent content on Dev Blog</description>
+    <title>Posts on Dev Blog</title>
+    <link>https://wcho21.github.io/posts/</link>
+    <description>Recent content in Posts on Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Aug 2022 22:30:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 22:30:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>휴고 블로그 만들기</title>
       <link>https://wcho21.github.io/2022/08/30/how-to-create-a-hugo-blog/</link>
