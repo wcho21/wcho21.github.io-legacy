@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dev Blog</title>
+    <title>DEVLOG W</title>
     <link>https://wcho21.github.io/</link>
-    <description>Recent content on Dev Blog</description>
+    <description>Recent content on DEVLOG W</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>ko-kr</language>
     <lastBuildDate>Tue, 30 Aug 2022 22:30:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>휴고 블로그 만들기</title>
@@ -13,13 +13,7 @@
       <pubDate>Tue, 30 Aug 2022 22:30:00 +0900</pubDate>
       
       <guid>https://wcho21.github.io/2022/08/30/how-to-create-a-hugo-blog/</guid>
-      <description>이 글은 Hugo라는 정적 사이트 생성기(Static site generator)를 이용해 깃헙 페이지로 블로그를 개설하는 방법을 소개한다.
-Hugo 설치 휴고 공식 사이트에서 설치 방법을 참고하여 사용 중인 OS에 맞게 설치한다.
-바이너리 파일을 받거나, 패키지 매니저로 설치할 수 있다.
-여기서는 Windows에서 Chocolatey 패키지 매니저를 통해 설치한다.
-choco install hugo -confirm 설치가 완료되었다면 hugo 커맨드를 사용할 수 있다.
-hugo version 커맨드를 입력하여 버전을 확인해볼 수 있다.
-hugo version hugo v0.102.1-e9c3ce16abc391ee5be38f88b0499d0e8e19104c windows/amd64 BuildDate=2022-08-29T12:58:13Z VendorInfo=gohugoio 블로그 만들기 초기화 적당한 디렉토리에 hugo new site blog 커맨드를 입력한다.</description>
+      <description>GitHub에 블로그를 올리기까지</description>
     </item>
     
   </channel>
