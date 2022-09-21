@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+
+  
+  
+  <title>DEVLOG W | 자바스크립트의 call, apply, bind</title>
+
+  
+  <link rel="stylesheet" type="text/css" href="/sass/layout.min.981eba9c7afc1cd03a5f0ea93107e171972b8bc5788b91f11d9d444c9f71e9b6.css">
+</head>
+
+  
+  <link rel="stylesheet" type="text/css" href="/sass/single.min.20f1b268c3e8362c9737e96e3f6110094170f6bb066fc7eaad8b4360fdda1365.css">
+
+  </head>
+<body>
+  <header>
+    <div id="header-wrapper">
+  <a href="/"><h1 id="header-title">DEVLOG W</h1></a>
+
+  <menu id="header-menu">
+    
+      <li class="header-menu-item">
+        
+        
+
+        <a href="/" target="_self">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+        </a>
+      </li>
+      <li class="header-menu-item">
+        
+        
+
+        <a href="https://github.com/wcho21" target="_blank">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+        </a>
+      </li>
+  </menu>
+</div>
+  </header>
+  <main>
+    
+  <article id="article">
+    <h1 id="article-heading">자바스크립트의 call, apply, bind</h1>
+    <p id="article-date">2022-09-21</p>
+
+    <div id="article-content">
+      <h2 id="tldr">TL;DR</h2>
+<ol>
+<li>
+<p>자바스크립트에서 <code>this</code>는 호출한 객체가 된다.</p>
+</li>
+<li>
+<p><code>call</code> 메소드는 <code>this</code>를 다른 객체로 바꿔 호출한다.</p>
+</li>
+<li>
+<p><code>apply</code> 메소드는 <code>call</code> 메소드의 배열 버전이다.</p>
+</li>
+<li>
+<p><code>bind</code> 메소드는 <code>this</code>를 바꾼 함수를 리턴한다.</p>
+</li>
+</ol>
+<h2 id="자바스크립트의-함수">자바스크립트의 함수</h2>
+<p>먼저 자바스크립트에서 <code>this</code> 키워드가 어떻게 바인딩 되는지 알아볼 필요가 있다.</p>
+<p>이를 위해 자바스크립트의 함수를 살펴보자.</p>
+<h3 id="메소드와-생성자">메소드와 생성자</h3>
+<p>자바스크립트에서 메소드와 생성자는 사용하는 패턴이 다른 함수일 뿐이다.</p>
+<p>첫 번째로, 메소드란 객체 내에 함수로 정의된 프로퍼티이다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff79c6">const</span> obj1 <span style="color:#ff79c6">=</span> { 
+</span></span><span style="display:flex;"><span>  foo() { <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span>; }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">typeof</span> obj1.foo; <span style="color:#6272a4">// &#39;function&#39;
+</span></span></span></code></pre></div><p>두 번째로, 생성자 또한 함수로서 표현할 수 있다. 다만 일반적인 함수와는 달리, 객체가 암묵적으로 리턴된다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> Foo(id) {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">this</span>.id <span style="color:#ff79c6">=</span> id;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">const</span> instance <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Foo(<span style="color:#bd93f9">42</span>);
+</span></span><span style="display:flex;"><span>instance1.id; <span style="color:#6272a4">// 42
+</span></span></span></code></pre></div><h3 id="this-바인딩"><code>this</code> 바인딩</h3>
+<p>메소드에서는 <code>this</code> 키워드를 이용해 객체 내 다른 프로퍼티에 접근할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff79c6">const</span> obj2 <span style="color:#ff79c6">=</span> {
+</span></span><span style="display:flex;"><span>  foo() { <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span>.bar; },
+</span></span><span style="display:flex;"><span>  bar<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">2</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>obj2.foo(); <span style="color:#6272a4">// 2
+</span></span></span></code></pre></div><p>여기서 <code>this</code>가 <code>obj2</code> 객체에 바인딩되었다고 생각할 수도 있겠다.</p>
+<p>하지만 자바스크립트에서 <code>this</code>의 바인딩은 함수가 정의될 때가 아니라, 함수가 호출되는 시점에 결정된다.</p>
+<p>예를 들어, 다른 객체인 <code>obj3</code>에서 <code>foo</code> 함수의 참조를 가지고 있다고 해보자.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff79c6">const</span> obj3 <span style="color:#ff79c6">=</span> {
+</span></span><span style="display:flex;"><span>  foo<span style="color:#ff79c6">:</span> obj2.foo,
+</span></span><span style="display:flex;"><span>  bar<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">3</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>obj3.foo(); <span style="color:#6272a4">// 3
+</span></span></span></code></pre></div><p>객체가 메소드를 호출하면 호출한 객체가 <code>this</code>가 된다.</p>
+<p>따라서 <code>obj3</code> 객체가 <code>foo</code> 메소드를 호출하면, <code>this</code>는 <code>obj3</code>으로 바인딩된다.</p>
+<p>이로 인해 <code>obj3.foo()</code>의 값은 <code>obj3.bar</code> 값이 된다.</p>
+<h2 id="call-메소드"><code>call</code> 메소드</h2>
+<p><code>call</code> 메소드는 <code>this</code>의 바인딩을 바꾸어 함수를 호출한다.</p>
+<h3 id="예시-메소드-빌리기">예시: 메소드 빌리기</h3>
+<p>방금 예시 그대로, <code>obj3</code> 객체에 <code>foo</code> 메소드가 있다고 해보자.</p>
+<p>그리고 <code>obj4</code> 객체에는 <code>foo</code> 메소드가 없다고 해보자.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff79c6">const</span> obj4 <span style="color:#ff79c6">=</span> { bar<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">4</span> };
+</span></span></code></pre></div><p>여기서 <code>obj4</code> 객체가 <code>foo</code> 메소드를 빌려서 한번 호출하고 싶다.</p>
+<p>그러면 <code>foo</code> 메소드를 잠깐 갖고 있으면 되지 않을까?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>obj4.foo <span style="color:#ff79c6">=</span> obj3.foo;
+</span></span><span style="display:flex;"><span>obj4.foo(); <span style="color:#6272a4">// 4
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">delete</span> obj4.foo;
+</span></span></code></pre></div><p>그런데 이 방법은 바람직하지 않다.</p>
+<p>이미 <code>obj4</code> 객체에 그 프로퍼티가 존재할 수도 있고, 어쩌면 새로운 프로퍼티 추가가 불가능할 수도 있다.</p>
+<h3 id="더-나은-방법">더 나은 방법</h3>
+<p><code>call</code> 메소드는 첫 번째 인자를 통해 호출자를 바꿀 수 있다. 즉 <code>this</code>에 바인딩되는 객체를 바꿀 수 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>obj3.foo.call(obj4); <span style="color:#6272a4">// 4
+</span></span></span></code></pre></div><p>만약에 <code>foo</code> 메소드가 <code>arg1</code>, <code>arg2</code> 매개변수를 받는 함수였다면 다음과 같이 호출했을 것이다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>obj3.foo.call(obj4, arg1, arg2);
+</span></span></code></pre></div><h2 id="apply-메소드"><code>apply</code> 메소드</h2>
+<p><code>apply</code> 메소드는 <code>call</code> 메소드의 배열 버전이다.</p>
+<h3 id="es6-이전의-가변-인수-메소드">ES6 이전의 가변 인수 메소드</h3>
+<p>지금은 함수의 가변 인수를 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">Rest parameters</a>로 간단히 지원할 수 있다.</p>
+<p>하지만 이 기능이 ES6 문법으로 발표되기 이전에는 그렇지 않았다.</p>
+<p>당시 가변 인수는 모든 함수가 암시적으로 갖고 있는 (배열과 유사한) <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments"><code>arguments</code> 객체</a>를 이용하였다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> sum() {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">Array</span>.from(arguments).reduce((a, b) =&gt; a <span style="color:#ff79c6">+</span> b);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sum(<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>); <span style="color:#6272a4">// 6
+</span></span></span></code></pre></div><h3 id="예시-평균-함수-만들기">예시: 평균 함수 만들기</h3>
+<p>이제 <code>sum</code> 함수를 이용하여 <code>average</code> 함수를 만들고 싶다고 해보자.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> average() {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">const</span> s <span style="color:#ff79c6">=</span> sum(arguments[<span style="color:#bd93f9">0</span>], arguments[<span style="color:#bd93f9">1</span>] <span style="color:#6272a4">/*, ... */</span>); <span style="color:#6272a4">// ?
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> s <span style="color:#ff79c6">/</span> arguments.length;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>average</code> 함수가 가진 것은 <code>arguments</code>인데, <code>sum</code> 함수는 배열이 아니라 가변 인수를 지원한다.</p>
+<p>그러면 배열을 가지고 가변 인수 함수를 어떻게 호출할 수 있을까?</p>
+<h3 id="배열로-가변-인수-함수-호출하기">배열로 가변 인수 함수 호출하기</h3>
+<p>배열을 이용하여 <code>call</code> 메소드를 사용하고 싶다면, 대신 <code>apply</code> 메소드를 사용하자.</p>
+<p>아래 두 메소드의 호출은 쓰임새가 같다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>sum.call(<span style="color:#ff79c6">null</span>, <span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>); <span style="color:#6272a4">// 6
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>sum.apply(<span style="color:#ff79c6">null</span>, [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>]); <span style="color:#6272a4">// 6
+</span></span></span></code></pre></div><p>여기서는 <code>this</code>에 별다른 바인딩이 필요 없으므로 <code>null</code> 값을 넘겼다.</p>
+<p>이제 <code>average</code> 함수를 다음과 같이 작성할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> average() {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">const</span> s <span style="color:#ff79c6">=</span> sum.apply(<span style="color:#ff79c6">null</span>, arguments);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> s <span style="color:#ff79c6">/</span> arguments.length;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="bind-메소드"><code>bind</code> 메소드</h2>
+<p><code>bind</code> 메소드는 <code>this</code>에 원하는 객체를 고정시킨 함수를 리턴한다.</p>
+<h3 id="예시-메소드-이름-줄여쓰기">예시: 메소드 이름 줄여쓰기</h3>
+<p>긴 메소드 이름을 줄여쓰기 위해, 짧은 이름의 변수에 메소드를 할당해볼 수 있을 것 같다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff79c6">const</span> foo <span style="color:#ff79c6">=</span> {
+</span></span><span style="display:flex;"><span>  veryLongNameMethod() {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span>.value;
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  value<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">42</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">const</span> <span style="color:#ff79c6">short</span> <span style="color:#ff79c6">=</span> foo.veryLongNameMethod;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">short</span>(); <span style="color:#6272a4">// ?
+</span></span></span></code></pre></div><p>하지만 이런 코드는 동작하지 않는다.</p>
+<p><code>short()</code> 코드는 호출하는 객체가 없기 때문에 <code>this</code> 값이 <code>undefined</code>가 되기 때문이다.</p>
+<h3 id="해결-방법">해결 방법</h3>
+<p><code>bind</code> 메소드로 <code>this</code> 값이 <code>foo</code>로 고정된 함수를 만들 수 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff79c6">const</span> short2 <span style="color:#ff79c6">=</span> foo.veryLongNameMethod.bind(foo);
+</span></span><span style="display:flex;"><span>short2(); <span style="color:#6272a4">// 42
+</span></span></span></code></pre></div><p>이제 <code>short2()</code> 호출 시 <code>this</code>는 항상 <code>foo</code> 객체가 된다.</p>
+<h2 id="레퍼런스">레퍼런스</h2>
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">MDN</a>: <code>this</code>의 런타임 바인딩에 대한 자세한 설명을 볼 수 있다.</p>
+</li>
+<li>
+<p>Effective Javascript (David Herman, 2012): 자바스크립트에서의 함수와 <code>call</code>, <code>apply</code>, <code>bind</code> 메소드의 간결한 설명이 들어있다. (<a href="http://www.yes24.com/Product/Goods/9375384">이펙티브 자바스크립트</a>라는 책으로 번역되어 있다.)</p>
+</li>
+<li>
+<p>Javascript: The Definitive Guide (7th, David Flanagan, 2020): 자바스크립트의 자세한 설명이 들어있다. (<a href="http://www.yes24.com/Product/Goods/108450351">자바스크립트 완벽 가이드</a>라는 책으로 번역되어 있다.)</p>
+</li>
+</ul>
+
+    </div>
+  </article>
+
+  <div id="comments">
+    <script src="https://utteranc.es/client.js" repo="wcho21/hugo-blog-comments" issue-term="pathname" theme="dark-blue" crossorigin="anonymous" async></script>
+  </div>
+
+  <ul id="pagination">
+    
+      <li class="pagination-article">
+        <a href="/2022/09/15/boostcamp-week-2-retrospective/">
+          <div class="pagination-article-title">
+            <span class="pagination-article-title-label">이전 글:</span>
+            부스트캠프 7기 멤버십 2주차 회고
+          </div>
+        </a>
+      </li>
+    
+    
+  </ul>
+
+  </main>
+  <footer>
+    <div id="footer-wrapper">
+  <p id="footer-copyright">&copy; 2022 DEVLOG W.</p>
+  <p id="footer-contact">wcho.dev@gmail.com</p>
+</div>
+  </footer>
+</body>
+</html>

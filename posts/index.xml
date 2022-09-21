@@ -6,7 +6,16 @@
     <description>Recent content in Posts on DEVLOG W</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 15 Sep 2022 21:00:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Sep 2022 15:00:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>자바스크립트의 call, apply, bind</title>
+      <link>https://wcho21.github.io/2022/09/21/javascript-call-apply-bind/</link>
+      <pubDate>Wed, 21 Sep 2022 15:00:00 +0900</pubDate>
+      
+      <guid>https://wcho21.github.io/2022/09/21/javascript-call-apply-bind/</guid>
+      <description>this 키워드로 살펴보는 세 가지 메소드</description>
+    </item>
+    
     <item>
       <title>부스트캠프 7기 멤버십 2주차 회고</title>
       <link>https://wcho21.github.io/2022/09/15/boostcamp-week-2-retrospective/</link>
