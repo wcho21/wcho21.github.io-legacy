@@ -6,7 +6,16 @@
     <description>Recent content in Posts on DEVLOG W</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 21 Sep 2022 15:00:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 22:00:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>자바스크립트의 비교 연산자는 왜 이럴까?</title>
+      <link>https://wcho21.github.io/2022/09/25/javascript-weird-relational-comparison/</link>
+      <pubDate>Sun, 25 Sep 2022 22:00:00 +0900</pubDate>
+      
+      <guid>https://wcho21.github.io/2022/09/25/javascript-weird-relational-comparison/</guid>
+      <description>== 연산과 &amp;gt;= 연산의 차이가 부른 궁금증</description>
+    </item>
+    
     <item>
       <title>자바스크립트의 call, apply, bind</title>
       <link>https://wcho21.github.io/2022/09/21/javascript-call-apply-bind/</link>
