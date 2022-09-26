@@ -6,7 +6,16 @@
     <description>Recent content in Posts on DEVLOG W</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 25 Sep 2022 22:00:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 23:30:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>부스트캠프 7기 멤버십 3주차 회고</title>
+      <link>https://wcho21.github.io/2022/09/25/boostcamp-week-3-retrospective/</link>
+      <pubDate>Sun, 25 Sep 2022 23:30:00 +0900</pubDate>
+      
+      <guid>https://wcho21.github.io/2022/09/25/boostcamp-week-3-retrospective/</guid>
+      <description>Do poor work and share it with people</description>
+    </item>
+    
     <item>
       <title>자바스크립트의 비교 연산자는 왜 이럴까?</title>
       <link>https://wcho21.github.io/2022/09/25/javascript-weird-relational-comparison/</link>
