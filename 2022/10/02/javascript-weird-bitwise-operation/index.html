@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+
+  
+  
+  <title>DEVLOG W | 자바스크립트의 비트 연산자는 왜 이럴까?</title>
+
+  
+  <link rel="stylesheet" type="text/css" href="/sass/layout.min.981eba9c7afc1cd03a5f0ea93107e171972b8bc5788b91f11d9d444c9f71e9b6.css">
+</head>
+
+  
+  <link rel="stylesheet" type="text/css" href="/sass/single.min.08b0d1f8d90a40452781830f3ab8c438cf6d688490132424f465dfd7caa89429.css">
+
+  </head>
+<body>
+  <header>
+    <div id="header-wrapper">
+  <a href="/"><h1 id="header-title">DEVLOG W</h1></a>
+
+  <menu id="header-menu">
+    
+      <li class="header-menu-item">
+        
+        
+
+        <a href="/" target="_self">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+        </a>
+      </li>
+      <li class="header-menu-item">
+        
+        
+
+        <a href="https://github.com/wcho21" target="_blank">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+        </a>
+      </li>
+  </menu>
+</div>
+  </header>
+  <main>
+    
+  <article id="article">
+    <h1 id="article-heading">자바스크립트의 비트 연산자는 왜 이럴까?</h1>
+    <p id="article-date">2022-10-02</p>
+
+    <div id="article-content">
+      <p>왼쪽 쉬프트 연산자는 2씩 곱하는 특징이 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">10</span>; <span style="color:#6272a4">// 1024
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">30</span>; <span style="color:#6272a4">// 1073741824
+</span></span></span></code></pre></div><p>비트 연산이 더 빠르다는 생각때문에, 2를 곱할때 <code>&lt;&lt;</code> 연산을 사용할 수도 있겠다.
+문제는 이런식으로 구한 2의 31제곱이 자바스크립트에서는 음수가 된다는 점이다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">31</span>; <span style="color:#6272a4">// -2147483648 (!)
+</span></span></span></code></pre></div><p>또, 어떨 때는 말도 안되게 작은 수가 된다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">33</span>; <span style="color:#6272a4">// 2 (!)
+</span></span></span></code></pre></div><p>대충 <code>32</code> 부근에서 이상한 일이 일어난다.
+그러면 숫자란 32비트 값인가?
+하지만 32비트 범위 밖의 숫자도 잘 표현한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#bd93f9">2</span> <span style="color:#ff79c6">**</span> <span style="color:#bd93f9">32</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>; <span style="color:#6272a4">// 4294967297
+</span></span></span></code></pre></div><p>그렇다면 자바스크립트의 숫자는 무엇이고, 비트 연산은 어떻게 처리되는 것일까?</p>
+<h2 id="tldr">TL;DR</h2>
+<ol>
+<li>
+<p>자바스크립트에서 숫자는 64비트 부동소수점 형식을 따른다.</p>
+</li>
+<li>
+<p>비트 연산은 숫자를 32비트 정수로 바꾸어 계산한다.</p>
+</li>
+</ol>
+<h2 id="부동소수점">부동소수점</h2>
+<p>자바스크립트에서 정수는 부동소수점 형식이다.</p>
+<h3 id="64비트-부동소수점-포맷">64비트 부동소수점 포맷</h3>
+<p>Number 타입이란, <a href="https://262.ecma-international.org/13.0/#sec-ecmascript-language-types-number-type">ECMA 스펙</a>에 따르면, 64비트 부동소수점 포맷을 따른다.
+그 표준은 별도로 <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format#IEEE_754_double-precision_binary_floating-point_format:_binary64">IEEE-754</a>라는 이름으로 마련되어 있다.
+그래서, 그 표준은 무엇을 정하는가?</p>
+<p>다음과 같이 64개의 비트를 세 구역으로 나눈다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>0 10000000000 0..00000 = 2
+</span></span><span style="display:flex;"><span>s exponent    fraction
+</span></span></code></pre></div><p>그리고 다음과 같은 정보를 담는다.</p>
+<ul>
+<li>맨 처음 비트: 부호</li>
+<li>그 다음 11개의 비트: 지수</li>
+<li>나머지 52개의 비트: 가수</li>
+</ul>
+<h3 id="표현-가능한-정수-범위">표현 가능한 정수 범위</h3>
+<p>그러면, 정확하게 표현할 수 있는 가장 큰 정수는 얼마인가?</p>
+<p>가수 부분의 첫 비트는 <code>2</code>의 <code>-1</code> 제곱, 두 번째 비트는 <code>-2</code> 제곱을 나타내는 식이다.
+이런식으로 마지막 비트는 <code>2</code>의 <code>-52</code> 제곱을 나타낸다.</p>
+<p>여기에 지수는 이미 <code>52</code>라는 숫자를 나타내기에 충분히 큰 11비트 공간을 가지고 있다.</p>
+<p>따라서 가장 큰 정수는 <code>2 ** 53 - 1</code>이 되고, 다음과 같은 비트 표현을 가진다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>0 10000110011 1..11111 = (2 ** 53 - 1)
+</span></span></code></pre></div><p>여기에 부호 비트만 바꾸면, 표현 가능한 가장 작은 정수가 된다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1 10000110011 1..11111 = -(2 ** 53 - 1)
+</span></span></code></pre></div><h2 id="비트-시프트-연산">비트 시프트 연산</h2>
+<p>자바스크립트에서 비트 시프트 연산이 수행될 때 다양한 형변환이 이루어진다.</p>
+<h3 id="왜-1--31은-음수인가">왜 <code>1 &lt;&lt; 31</code>은 음수인가</h3>
+<p>이제 왜 이런 결과가 나오는지 살펴보자.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">31</span>; <span style="color:#6272a4">// -2147483648
+</span></span></span></code></pre></div><p>왼쪽 시프트 연산은 ECMA 스펙상 <a href="https://262.ecma-international.org/13.0/#sec-numeric-types-number-leftShift"><code>Number::leftShift</code></a> 알고리즘을 따른다.
+먼저, 왼쪽 숫자를 부호 있는 32비트 숫자로 형변환한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1 -&gt; 000..0001
+</span></span></code></pre></div><p>그러면 <code>1</code>은 단순히 가장 오른쪽에 비트에 <code>1</code>을 가진 형태가 된다.
+이 비트를 왼쪽으로 31번 밀면, 가장 왼쪽 비트가 <code>1</code>이 된다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1000..000 -&gt; -2147483648
+</span></span></code></pre></div><p>연산 결과는 2의 보수로 표현한 숫자로 해석한다.
+따라서 가장 왼쪽의 비트는 부호를 건드린 것이 되고, 결과적으로 2의 31제곱의 음수가 된다.</p>
+<p>하필이면 &lsquo;부호 있는&rsquo; 타입으로 형변환했기 때문에 이런 결과가 나오게 되었다.</p>
+<h3 id="왜-1--33은-작은가">왜 <code>1 &lt;&lt; 33</code>은 작은가</h3>
+<p>그러면 두 번째 문제가 남았다. 왜 비트를 33번 밀면 도로 숫자가 작아지는가?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">33</span>; <span style="color:#6272a4">// 2
+</span></span></span></code></pre></div><p>사실 숫자가 도로 작아지는게 아니다.
+오른쪽 숫자는 부호 없는 32비트 숫자로 형변환된후, 32로 나눈 나머지만 취하기 때문이다.</p>
+<p>즉 다음 연산은 알고리즘 상 동일한 결과를 낸다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">1</span>; <span style="color:#6272a4">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">33</span>; <span style="color:#6272a4">// 2
+</span></span></span></code></pre></div><p>마찬가지로 <code>-1</code> 만큼의 시프트는 <code>31</code>과 같은 결과를 낸다. (<code>-1</code>의 비트 표현을 생각해보라.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>; <span style="color:#6272a4">// -2147483648
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;&lt;</span> <span style="color:#bd93f9">31</span>; <span style="color:#6272a4">// -2147483648
+</span></span></span></code></pre></div><h3 id="왜-32비트로-형변환-될까">왜 32비트로 형변환 될까</h3>
+<p>마지막으로 남은 의문이다. 왜 비트 연산을 할 때 32비트로 형변환할까? 왜 64비트가 아닌가?</p>
+<p>앞서 언급 했듯이, 정수는 부동소수점으로 표현된다. 그리고 정확한 표현은 <code>2</code>의 <code>53</code> 제곱 미만까지 가능하다.
+그러면 숫자를 정수로 변환하면 많아야 52 비트만 사용할 것이다.</p>
+<p>32 비트 보다는 크고 64 비트 보다는 작다. 그렇기에 아마 64 비트 형변환하는 것이 낭비라고 생각했던 것 아닐까?
+트레이드 오프의 문제인 것 같다.
+이 부분은 추측이다.</p>
+<h2 id="레퍼런스">레퍼런스</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=14jlIxVrcvo">5 Things I Hate about Javascript</a>: 작성 계기가 된 영상이다. 이 글의 주제를 포함해 자바스크립트의 다섯 가지의 이상한 점을 다루고 있다.</li>
+<li><a href="https://stackoverflow.com/questions/68174420/why-does-js-do-a-32bit-convert-before-bitwise-calculations">SO</a>: 왜 비트 연산 시 32비트로 변환하는 지 질문이 있지만&hellip; 오피셜한 근거를 가진 답변을 찾기는 어려운 것 같다.</li>
+</ul>
+
+    </div>
+  </article>
+
+  <div id="comments">
+    <script src="https://utteranc.es/client.js" repo="wcho21/hugo-blog-comments" issue-term="pathname" theme="dark-blue" crossorigin="anonymous" async></script>
+  </div>
+
+  <ul id="pagination">
+    
+      <li class="pagination-article">
+        <a href="/2022/09/25/boostcamp-week-3-retrospective/">
+          <div class="pagination-article-title">
+            <span class="pagination-article-title-label">이전 글:</span>
+            부스트캠프 7기 멤버십 3주차 회고
+          </div>
+        </a>
+      </li>
+    
+    
+      <li class="pagination-article">
+        <a href="/2022/10/02/boostcamp-week-4-retrospective/">
+          <div class="pagination-article-title">
+            <span class="pagination-article-title-label">다음 글:</span>
+            부스트캠프 7기 멤버십 4주차 회고
+          </div>
+        </a>
+      </li>
+    
+  </ul>
+
+  </main>
+  <footer>
+    <div id="footer-wrapper">
+  <p id="footer-copyright">&copy; 2022 DEVLOG W.</p>
+  <p id="footer-contact">wcho.dev@gmail.com</p>
+</div>
+  </footer>
+</body>
+</html>
