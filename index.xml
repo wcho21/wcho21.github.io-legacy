@@ -18,10 +18,10 @@
     
     <item>
       <title>자바스크립트의 비트 연산자는 왜 이럴까?</title>
-      <link>https://wcho21.github.io/2022/10/02/javascript-weird-bitwise-operation/</link>
+      <link>https://wcho21.github.io/2022/10/02/javascript-weird-bit-shift-operation/</link>
       <pubDate>Sun, 02 Oct 2022 18:00:00 +0900</pubDate>
       
-      <guid>https://wcho21.github.io/2022/10/02/javascript-weird-bitwise-operation/</guid>
+      <guid>https://wcho21.github.io/2022/10/02/javascript-weird-bit-shift-operation/</guid>
       <description>비트 연산자로 알아보는 자바스크립트의 내부 정수 타입 관리</description>
     </item>
     
