@@ -6,7 +6,16 @@
     <description>Recent content in Posts on DEVLOG W</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 02 Oct 2022 19:00:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Oct 2022 20:00:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>문제 풀이로 알아보는 자바스크립트 클로저</title>
+      <link>https://wcho21.github.io/2022/10/09/javascript-closure-with-quiz/</link>
+      <pubDate>Sun, 09 Oct 2022 20:00:00 +0900</pubDate>
+      
+      <guid>https://wcho21.github.io/2022/10/09/javascript-closure-with-quiz/</guid>
+      <description>var 호이스팅과 함께 알아보기</description>
+    </item>
+    
     <item>
       <title>부스트캠프 7기 멤버십 4주차 회고</title>
       <link>https://wcho21.github.io/2022/10/02/boostcamp-week-4-retrospective/</link>
