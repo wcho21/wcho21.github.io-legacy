@@ -6,7 +6,16 @@
     <description>Recent content on DEVLOG W</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 09 Oct 2022 20:00:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Oct 2022 00:05:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub Action으로 배포 자동화하기</title>
+      <link>https://wcho21.github.io/2022/10/18/deployment-automation-via-github-action/</link>
+      <pubDate>Tue, 18 Oct 2022 00:05:00 +0900</pubDate>
+      
+      <guid>https://wcho21.github.io/2022/10/18/deployment-automation-via-github-action/</guid>
+      <description>예시를 통해 알아보는 워크플로우 작성 방법</description>
+    </item>
+    
     <item>
       <title>문제 풀이로 알아보는 자바스크립트 클로저</title>
       <link>https://wcho21.github.io/2022/10/09/javascript-closure-with-quiz/</link>
@@ -23,6 +32,15 @@
       
       <guid>https://wcho21.github.io/2022/10/02/boostcamp-week-4-retrospective/</guid>
       <description>공통 목표를 가졌던 한 주</description>
+    </item>
+    
+    <item>
+      <title>부스트캠프 7기 멤버십 5주차 회고</title>
+      <link>https://wcho21.github.io/2022/10/02/boostcamp-week-5-retrospective/</link>
+      <pubDate>Sun, 02 Oct 2022 19:00:00 +0900</pubDate>
+      
+      <guid>https://wcho21.github.io/2022/10/02/boostcamp-week-5-retrospective/</guid>
+      <description>슬럼프</description>
     </item>
     
     <item>
