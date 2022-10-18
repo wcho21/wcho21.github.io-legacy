@@ -151,7 +151,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">steps</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: deploy
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uses</span>: appleboy/ssh-action@v0.1.4
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uses</span>: appleboy/ssh-action@master
 </span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">with</span>:
 </span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">host</span>: ${{ secrets.SSH_HOST }}
 </span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">username</span>: ${{ secrets.SSH_USERNAME }}
@@ -181,7 +181,7 @@
 <p><img src="/images/2022/10/17/gh-action-secrets.png" alt="Action secrets"></p>
 <p>위와 같이 세팅 탭에서 Actions secrets를 설정할 수 있다.</p>
 <h3 id="배포-실행-및-결과">배포 실행 및 결과</h3>
-<p>보통 <code>SSH_SCRIPT</code> 값에 <code>./deploy.sh</code> 처럼 서버에서 실행할 스크립트 파일만 알려주고, 실제 배포 스크립트는 거기서 작성하는 편이다.
+<p>개인적으로는 보통 <code>SSH_SCRIPT</code> 값에 <code>./deploy.sh</code> 처럼 서버에서 실행할 스크립트 파일만 알려주고, 실제 배포 스크립트는 거기서 작성하는 편이다.
 그 파일에는 예를 들어 다음과 같은 내용을 작성할 수 있다.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff79c6">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#ff79c6"></span>git pull
