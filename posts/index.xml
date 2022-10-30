@@ -6,7 +6,16 @@
     <description>Recent content in Posts on DEVLOG W</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 19 Oct 2022 10:00:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Oct 2022 20:00:00 +0900</lastBuildDate><atom:link href="https://wcho21.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>공개키 암호화 방식의 개념과 RSA</title>
+      <link>https://wcho21.github.io/2022/10/30/public-key-cryptography-and-rsa/</link>
+      <pubDate>Sun, 30 Oct 2022 20:00:00 +0900</pubDate>
+      
+      <guid>https://wcho21.github.io/2022/10/30/public-key-cryptography-and-rsa/</guid>
+      <description>HTTPS 공부 도중 알아보는 암호학</description>
+    </item>
+    
     <item>
       <title>부스트캠프 7기 멤버십 5주차 회고</title>
       <link>https://wcho21.github.io/2022/10/19/boostcamp-week-5-retrospective/</link>
